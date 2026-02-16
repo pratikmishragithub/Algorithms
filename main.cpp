@@ -58,24 +58,49 @@
 //    cout<<"finalresult is:"<<result;
 // }
 
-#include<iostream>
+// #include<iostream>
+// using namespace std;
+// bool CheckPrime(int n){
+//     for(int i=2;i<n;i++){
+//         if(n%i==0){
+//             return false;
+//         }
+//     }
+//     return true;
+// }
+// int main(){
+// bool ans=CheckPrime(1);
+// if(ans){
+//     cout<<" prime no:"<<endl;
+// }
+// else{
+//     cout<<"not a prime no:"<<endl;
+// }
+// return 0;
+
+// }
+
+
+#include<bits/stdc++.h>
 using namespace std;
-bool CheckPrime(int n){
-    for(int i=2;i<n;i++){
-        if(n%i==0){
-            return false;
-        }
+void reverse(int arr[],int size){
+    int s=0;
+    int e=size-1;
+    while(s<=e){
+        swap(arr[s],arr[e]);
+        s++;
+        e--;
     }
-    return true;
+}
+
+void print(int arr[],int size){
+    for(int i=0;i<size;i++){
+        cout<<arr[i]<<" ";
+    }
 }
 int main(){
-bool ans=CheckPrime(1);
-if(ans){
-    cout<<" prime no:"<<endl;
-}
-else{
-    cout<<"not a prime no:"<<endl;
-}
-return 0;
-
+    int arr[]={12,34,56,78,90};
+    int size=5;
+    reverse(arr,5);
+    print(arr,5);
 }
