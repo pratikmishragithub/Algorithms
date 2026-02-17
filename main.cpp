@@ -81,26 +81,52 @@
 // }
 
 
+// #include<bits/stdc++.h>
+// using namespace std;
+// void reverse(int arr[],int size){
+//     int s=0;
+//     int e=size-1;
+//     while(s<=e){
+//         swap(arr[s],arr[e]);
+//         s++;
+//         e--;
+//     }
+// }
+
+// void print(int arr[],int size){
+//     for(int i=0;i<size;i++){
+//         cout<<arr[i]<<" ";
+//     }
+// }
+// int main(){
+//     int arr[]={12,34,56,78,90};
+//     int size=5;
+//     reverse(arr,5);
+//     print(arr,5);
+// }
+
+
+
+//  find missing element in the array.
 #include<bits/stdc++.h>
 using namespace std;
-void reverse(int arr[],int size){
+int findMissing(int arr[],int size){
     int s=0;
     int e=size-1;
     while(s<=e){
-        swap(arr[s],arr[e]);
-        s++;
-        e--;
+        int mid=s+(e-s)/2;
+        if(arr[mid]==mid+1){
+            s=mid+1;
+        }
+        else{
+            e=mid-1;
+        }
     }
-}
-
-void print(int arr[],int size){
-    for(int i=0;i<size;i++){
-        cout<<arr[i]<<" ";
-    }
+    return s+1;
 }
 int main(){
-    int arr[]={12,34,56,78,90};
-    int size=5;
-    reverse(arr,5);
-    print(arr,5);
+    int arr[]={1,2,3,4,6,7,8,9,10};
+    int size=9;
+   int Ans= findMissing(arr,9);
+   cout<<Ans;
 }
